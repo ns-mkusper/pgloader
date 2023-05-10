@@ -38,6 +38,7 @@
                  where el.oid = t.typelem
                    and el.typarray = t.oid
               )
+         and enum.enumlabel is not null
 
 group by nt.nspname, extname, typname, enumtypid
 order by nt.nspname, extname, typname, enumtypid;
